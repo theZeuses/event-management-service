@@ -1,0 +1,42 @@
+services:
+  event-management-sevice:
+    container_name: shamil-event-management-sevice
+    build:
+      context: ../.
+      dockerfile: Dockerfile
+      args:
+        - PORT:${PORT}
+    volumes:
+      - ..:/app/
+      - /app/node_modules
+    ports:
+      - ${PORT}:${PORT}
+    networks:
+      - my_network
+    depends_on:
+      event-management-sevice-db:
+        condition: service_healthy
+
+  event-management-sevice-db:
+    image: mysql
+    container_name: shamil-event-management-sevice-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DOCKER_DATABASE_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DOCKER_DATABASE_NAME:-DATABASE_NAME}
+      MYSQL_USER: ${DOCKER_DATABASE_USER:-DATABASE_USER}
+      MYSQL_PASSWORD: ${DOCKER_DATABASE_PASSWORD:-DATABASE_PASSWORD}
+    networks:
+      - my_network
+    volumes:
+      - ./data/db.sql:/docker-entrypoint-initdb.d/dump.sql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-p${DOCKER_DATABASE_ROOT_PASSWORD}" ]
+      retries: 3
+      timeout: 5s
+    ports:
+      - '${DOCKER_DATABASE_MAPPED_PORT}:3306'
+
+networks:
+  my_network:
+    driver: bridge

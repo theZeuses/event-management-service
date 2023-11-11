@@ -1,0 +1,665 @@
+{
+	"info": {
+		"_postman_id": "69cb9589-1bce-4fdf-9e4e-6f586bc49f57",
+		"name": "Event Management Service - Shamil",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19755562"
+	},
+	"item": [
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Get List of Active Events with Pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/events?limit=10&page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"events"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List of Active Events with Pagination Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/v1/events?limit=10&page=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"events"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "268"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10c-6E/6qeNdwpf4k8me65JH0vBF01s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 13:33:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"events\": [\n        {\n            \"id\": 1,\n            \"title\": \"Demo Event\",\n            \"start_at\": \"2023-12-11T00:23:18.000Z\",\n            \"end_at\": \"2024-11-11T00:23:23.000Z\",\n            \"created_at\": \"2023-11-10T18:25:04.000Z\",\n            \"updated_at\": \"2023-11-10T18:25:04.000Z\"\n        }\n    ],\n    \"pagination\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"total_pages\": 1,\n        \"current_page\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Single Event Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/events/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Single Event Details Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/v1/events/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"events",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "203"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cb-TppylrtCzHqhmsU2XA4EHDJCp1U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 13:34:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"Demo Event\",\n    \"start_at\": \"2023-12-11T00:23:18.000Z\",\n    \"end_at\": \"2024-11-11T00:23:23.000Z\",\n    \"created_at\": \"2023-11-10T18:25:04.000Z\",\n    \"updated_at\": \"2023-11-10T18:25:04.000Z\",\n    \"total_workshops\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Active Workshops of A Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/events/1/workshops",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"events",
+								"1",
+								"workshops"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Active Workshops of A Event Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/v1/events/1/workshops",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"events",
+										"1",
+										"workshops"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "430"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ae-bS16h4O16xnyBjLp1KueNvf6Aps\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 13:35:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"Demo Event\",\n    \"start_at\": \"2023-12-11T00:23:18.000Z\",\n    \"end_at\": \"2024-11-11T00:23:23.000Z\",\n    \"created_at\": \"2023-11-10T18:25:04.000Z\",\n    \"updated_at\": \"2023-11-10T18:25:04.000Z\",\n    \"workshops\": [\n        {\n            \"id\": 1,\n            \"title\": \"Demo workshop\",\n            \"description\": \"Description.....\",\n            \"start_at\": \"2024-01-04T00:25:45.000Z\",\n            \"end_at\": \"2024-01-05T00:26:22.000Z\",\n            \"event_id\": 1,\n            \"created_at\": \"2023-11-10T18:27:09.000Z\",\n            \"updated_at\": \"2023-11-10T18:27:09.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Workshop",
+			"item": [
+				{
+					"name": "Reserve a workshop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test2@email.com\",\n    \"name\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/workshops/1/reserve",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"workshops",
+								"1",
+								"reserve"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Reserve a workshop example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test2@email.com\",\n    \"name\": \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/v1/workshops/1/reserve",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"workshops",
+										"1",
+										"reserve"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "516"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"204-qywR2Zo2uwM4K9MfN4Y0Oak/FVQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 13:39:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reservation\": {\n        \"email\": \"test2@email.com\",\n        \"name\": \"test\",\n        \"workshop_id\": 1,\n        \"id\": 2\n    },\n    \"event\": {\n        \"id\": 1,\n        \"title\": \"Demo Event\",\n        \"start_at\": \"2023-12-11T00:23:18.000Z\",\n        \"end_at\": \"2024-11-11T00:23:23.000Z\",\n        \"created_at\": \"2023-11-10T18:25:04.000Z\",\n        \"updated_at\": \"2023-11-10T18:25:04.000Z\"\n    },\n    \"workshop\": {\n        \"id\": 1,\n        \"title\": \"Demo workshop\",\n        \"description\": \"Description.....\",\n        \"start_at\": \"2024-01-04T00:25:45.000Z\",\n        \"end_at\": \"2024-01-05T00:26:22.000Z\",\n        \"event_id\": 1,\n        \"created_at\": \"2023-11-10T18:27:09.000Z\",\n        \"updated_at\": \"2023-11-10T18:27:09.000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Single Workshop Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/workshops/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"workshops",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Single Workshop Details Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/v1/workshops/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"workshops",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-ob9aJv4cRns6fsXsBcIxrbVGjF8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 13:38:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"Demo workshop\",\n    \"description\": \"Description.....\",\n    \"start_at\": \"2024-01-04T00:25:45.000Z\",\n    \"end_at\": \"2024-01-05T00:26:22.000Z\",\n    \"event_id\": 1,\n    \"created_at\": \"2023-11-10T18:27:09.000Z\",\n    \"updated_at\": \"2023-11-10T18:27:09.000Z\",\n    \"total_reservations\": 1\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
